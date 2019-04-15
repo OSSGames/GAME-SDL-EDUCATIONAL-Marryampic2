@@ -1,0 +1,20 @@
+INCLUDEDIRS = -ID:/Develope/gcc/v3.3.5_GA2/usr/include 
+LDFLAGS = -LD:/Develope/gcc/v3.3.5_GA2/usr/lib
+
+CFLAGS =  $(INCLUDEDIRS) -Zexe -DILBM_24BITS_SUPPORT
+LIBS = -lsdlmixer -lsdl -Zexe  -lsdlimage -llibstdc++ 
+
+OBJFILES = SFont.o load_aiff.o marryampic2.o my_load_sound.o SDL_audiocvt.o
+
+default: $(OBJFILES)
+	$(CXX) $(LDFLAGS) -o marryampic.exe  $(OBJFILES)  $(LIBS)
+
+.cpp.obj:
+	$(CXX) $(CFLAGS) -c $< -o $(<:.cpp=.obj)
+
+
+.c.obj:
+	$(CXX) $(CFLAGS) -c $< -o $(<:.c=.obj)
+
+
+

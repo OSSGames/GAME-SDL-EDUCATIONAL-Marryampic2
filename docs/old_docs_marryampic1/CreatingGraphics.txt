@@ -1,0 +1,76 @@
+              ›31;42m******************************************›0m
+              ›31;42m*   CREATING THE GRAPHICS OF A CARDSET   *›0m
+              ›31;42m******************************************›0m
+
+
+Littles notes if you want from digitized pictures, creating the
+final picture of your cardset.
+
+Softs used:
+  ADpro
+  DPaint
+
+
+
+# Scanning the pitures or grabbing video screens:
+
+I personnaly use Vidi-24RT, but any scanner or others should be nice.
+See the doc of your hardware...
+
+
+
+# Cutting your pictures to keep only what you want:
+
+I use ADpro for this.
+-Load the picture
+-Use CropVisual operator
+ set width and height to the size of your final card
+ set keep aspect on (your picture will not be distorted)
+ Move the frame and size it, to keep what you want
+ Click accept
+-Save your new image in IFF 24 bits (important)
+
+
+
+# Resizing your picture to the size of the final cards
+
+I use again ADpro for this.
+-Load the new image cropped.
+-Use Scale operator
+ set width and height to the size of the final cards
+ Click accept
+-Save your scaled image in IFF 24 bits
+
+
+
+# Assembling all the pictures on the same picture
+
+I use ADpro.
+-Load a 24 bits black picture of the size of the screen.
+-Set the option of loading to Comp (instead of Replc)
+-Load each pictures where you want.
+-Set the dither mode to floyd or other.
+-Set a number of colours (16 for ECS or 256 for AGA)
+-Click execute
+-Save your picture 'CardPic.IFF' or 'CardPic_AGA.IFF'
+
+
+
+# Rearranging the colours (to allow messages to be displayed)
+
+I use DPaint.
+Marryampic use the colour #1 for the text displayed in the bottom.
+Colour #0 and #1 should be very different.
+-Load the picture
+-Open the palette (click with right button of the colour)
+-If colour #0 is nearly the same than colour #1 :
+ swap colour #1 and another one : very different. (button EX)
+-Click OK
+-Use the menu Color/Remap
+-Save back your picture.
+Now the messages can be correctly seen.
+
+
+
+
+MaVaTi, 19 october 1997.

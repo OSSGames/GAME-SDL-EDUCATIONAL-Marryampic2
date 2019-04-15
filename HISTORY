@@ -1,0 +1,49 @@
+
+
+v0.1 (30 december 2002)
+pre-alpha release.
+
+v0.2 (31 december 2002)
+-Multi-players working.
+-Results at the end of the game.
+-Complete rules.
+-Added support for .jpg picture file and .wav sound files in cardset directory.
+
+v0.3 (2 january 2003)
+-Using 2 channels instead of 1 for audio. On one computer (William's one), sounds were
+ played too fastly...
+-ILBM_24BITS_SUPPORT define for compilation.
+-Test mode by pressing SPACE in Setup.
+
+v0.4 (27 january 2003)
+-"--fullscreen" and "-f" mode option added.
+-alpha sort done on the cardsets list.
+-using sdl-config command in Makefile.
+
+v0.5 (15 july 2003)
+-Modified menu part to be able to see the line on which the mouse is on.
+-In menu and when displaying the preview, using SDL_GetTicks() instead of counting time
+ with theoric time elapsed in each SDL_Delay() call (usefull for MorphOS).
+-Can compile with others WIDTH & HEIGHT and all screens are still correctly centered,
+ usefull is like me you've got some troubles with fullscreen mode on a
+ computer...
+-When a pair is found, hide it later when you found another one (so that you've got
+ more time to see it than before).
+-Created file sound_params.h to share constants reused in my_load_sound.c
+ (differents values for MorphOS).
+
+v0.6 (29 december 2005)
+-New parameters "DISPLAY_WIDTH" and "DISPLAY_HEIGHT" for screen resolution in cardinfo.txt
+ (default is 640x480 which is okay for all the Amiga cardsets of MarryampicI)
+-Background picture during game can be used.
+-Displaying a picture for the scores can be done.
+-key 'f' for fullscreen mode during the setup.
+-Flush events before taking into account a new click.
+-Can use wheel button for cardset selection.
+-if "test mode" was activated one time, done every time after...
+-when reading cards directoy, use stat() function instead of DT_DIR on readdir() entries
+ as it is not working without ixemul on MorphOS.
+-Light blue background for the setup screen instead of black (the cursor is black on MorphOS
+ in fullscreen with powersdl).
+
+ 

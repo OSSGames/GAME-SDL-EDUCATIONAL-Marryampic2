@@ -1,0 +1,279 @@
+@database Marryampic
+@$VER: 1.7
+@author "Le Douarain Marc"
+@wordwrap
+@font XEN.font 11
+
+@node "Main" "Documentation de Marryampic"
+@font helvetica.font 13
+               @{b}Marryampic v1.7
+               3 octobre 1999
+               (c) 1995-1999 Le Douarain Marc@{ub}
+
+        @{"Introduction" link "Introduction" 0}				Qu'est ce que Marryampic ?
+        @{"Matériel nécessaire" link "Requirements" 0}			Sur quelle machine ça tourne ?
+        @{"Installation" link "Install" 0}					Installation & nouveau jeu de cartes
+        @{"Fenêtre de réglages" link "SetUp Window" 0}			Régler les préférences avant de jouer
+        @{"Jouer" link "The game" 0}					Les règles du jeu
+        @{"Vos propres jeux de cartes" link "Own CardSets" 0}		Si vous voulez créer les vôtres
+        @{"L'auteur" link "Author" 0}					C'est moi
+        @{"Information légale" link "LegalInfo" 0}			La petite note habituelle
+
+
+                  Marryampic sur le WEB :
+    http://www.club-internet.fr/perso/mavati/marryampic
+@endnode
+
+@node "Introduction" "Introduction à Marryampic"
+Marryampic est un jeu de cartes ou vous devez trouvez des paires de cartes sonorisées.
+Il y a plusieurs règles pour le jeu, choisies par l'intermédiaire d'options à cocher dans la fenêtre de réglages au démarrage.
+L'idée de base est : premièrement un son d'une paire est jouée, ensuite chaque joueur, tour après tour, essaie de trouvez les 2 cartes correspondantes au son.
+Mais, vous pouvez aussi tout à fait jouer de manière classique comme n'importe quel jeu 'memory' conventionnel.
+@endnode
+
+@node "Requirements" "Matériel nécessaire"
+Pour lancer Marryampic, vous devez avoir:
+   - un Amiga
+   - le kickstart 2.0 ou supérieur
+   - 1 Mo de RAM ou plus
+   - un disque dur serait très appréciable.
+     (d'autant plus que beaucoup de jeu de cartes ne tiendront pas
+      sur une disquette simple de 880 ko...)
+
+
+Marryampic a été testé avec succès sur:
+   - un Amiga 1200 / Disque dur / Blizzard 68020-28mhz / 6 Mo
+   - un Amiga 1200 / Disque dur / Blizzard 68030-50mhz / 10 Mo
+   - un Amiga 1200 / Disque dur / Mtec 68030-25mhz / 10 Mo
+   - un Amiga 3000 / Disque dur / CyberstormMK2 68060-50mhz / Cybervision64
+   - un Amiga 2000 / Disque dur / 68040-25mhz / PicassoII
+
+Si vous trouvez une quelconque incompatibilité, merci de me la signaler.
+@endnode
+
+
+@node "Install" "Installation"
+Pour installer Marryampic, vous n'avez juste qu'à copier le répertoire 'Marryampic' où vous le souhaitez sur votre disque dur.
+
+Depuis la version 1.5, Marryampic est maintenant fourni sans aucun jeu de cartes, afin que vous n'ayez pas à télécharger une grosse archive comprenant un jeu de carte que vous avez déjà.
+
+Si vous N'AVEZ PAS DE JEUX DE CARTES, vous DEVEZ d'abort en RECUPERER UN (au moins) avant de pouvoir utiliser ce jeu !!!
+Il y a plusieurs jeux de cartes disponibles sur Aminet à game/data.
+
+Pour installer un nouveau jeu de cartes, vous avez juste à faire glisser son répertoire vers le répertoire 'Cards' de Marryampic.
+
+
+
+Petite précision pour les utilisateurs de lecteurs de disquettes : 
+Le fichier ASCII 'Marryampic.prefs' contient les chemins de vos différents jeux de cartes.
+Vous devez écrire sur une nouvelle ligne après la ligne PATHS_CARDS= tous les chemins de vos jeux de cartes.
+Ce fichier est intéressant si vous avez par-exemple un jeu de carte sur une disquette, en écrivant :
+   DISK_CARTOONS:Warner
+Ainsi Marryampic accèdera au jeu de cartes sur la disquette du nom 'DISK_CARTOONS:'
+Le nom du répertoire est utilisé dans le gadget du choix de jeu de cartes.
+
+
+Si vous possédez un disque dur et voulez profiter de la recherche automatique des jeux de cartes présents, effacez le fichier 'Marryampic.prefs' si présent. Ce fichier est obosolète pour vous. Laissez l'Amiga travailler à votre place!
+@endnode
+
+
+@node "SetUp Window" "Fenêtre de réglages"
+Dans la fenêtre qui apparaît au lancement, vous pouvez régler ceci :
+
+
+# Le nombre de joueurs (1 à 4)
+# Le nom de chaque joueur
+
+# Le jeu de carte avec lequel vous voulez jouer
+
+# Uniquement la paire écoutée
+Ceci vous permet de choisir le type de jeu 'Memory classique' ou 'Marryampic'.
+Dans le mode Classique, vous pouvez trouver n'importe quelle paire.
+Dans le mode Marryampic, vous écoutez d'abord un son, ensuite vous devez trouver la paire correspondante à ce son et uniquement celle-ci!
+# Pour le mode Marryampic, le changement systématique ou non du son. Activé, cette option rend le jeu très très difficile!
+# La prévisualisation des paires avec un temps prédéfini.
+
+# La version graphique à utiliser : ECS ou AGA/Picasso96/CyberGraphX.
+# Le mode d'écran pour ouvrir l'écran du jeu de cartes sélectionné.
+Certains jeu de cartes ne possèdent pas forcément de version AGA de leurs graphiques.
+Les possesseurs d'ECS+Carte graphique peuvent utiliser la version graphique AGA en sélectionnant un mode d'écran de leur carte graphique qui supporte un nombre de couleurs suffisants.
+
+Cliquez sur OK! pour commencer à jouer.
+
+
+Marryampic supporte différentes options accessibles via le menu 'Préférences' :
+
+ # Préchargement
+   Indique à Marryampic de précharger ou non, le maximum de sons en
+   mémoire. Pratique pour les utilisateurs de disquettes...
+   Si vous possédez un disque dur, ne sélectionnez pas cette option !
+ # LireDepuisDisque
+   Indique aux sons non préchargés, comment être joués:
+   En LireDepuisDisque : un son est chargé et joué en même temps
+   (on parle aussi de DirectToDisk). Peu de consommation mémoire mais
+   la machine est bloquée
+   Sinon
+   un son est chargé en entier puis joué ensuite.
+   La taille de mémoire nécessaire est égale à la taille du son.
+   Si vous possédez un disque dur, ne sélectionnez pas cette option !
+   Note: un son de taille>128 ko est obligatoirement joué en DirectToDisk.
+ # AlerteEcran
+   Autorise un flash et beep écran si vous cliquez comme un dingue...
+   (dépendant des préférences de votre Workbench, Prefs/Sound)
+ # Flitre passe-bas
+   Active ou non le filtre passe bas de votre Amiga.
+ # EffacementPaires
+   Efface les paires trouvées.
+
+ # Sauver
+   Sauvegarde vos options et vos réglages de jeu actuels.
+
+@endnode
+
+
+@node "The game" "Les règles du jeu"
+- En mode Marryampic : (option 'Uniquement la paire écoutée' activée)
+Premièrement un son est joué, ensuite vous devez trouver la paire correspondante à ce son.
+
+- En mode Classique : (option 'Uniquement la paire écoutée' désactivée)
+Vous pouvez trouver n'importe quelle paire. Quand trouvée, le son correspondant à la paire est joué.
+
+Chaque joueur choisi 2 cartes tour après tour. Si c'est la bonne paire, les 2 cartes disparaissent, sinon elles sont à nouveau cachées. Le nombre de paires trouvées par chaque joueur est affiché en fin de partie.
+Le joueur qui trouve une paire, peut rejouer.
+Appuyez sur la BARRE ESPACE pour réentendre le son (en mode Marryampic).
+Appuyez sur la touche 'f' pour activer ou non le filtre audio.
+C'est tout....?
+@endnode
+
+
+
+
+@node "Own cardsets" "Créer vos propres jeux de cartes !"
+Premièrement, votre jeu de cartes DOIT ETRE dans un tiroir.
+
+
+Dans ce tiroir vous aurez :
+
+=> une image contenant toutes vos différentes paires+le dos :
+    @{b}CardPic.IFF@{ub}       pour un mode d'écran ECS compatible tout amiga.
+    @{b}CardPic_AGA.IFF@{ub}   pour un mode d'écran AGA.
+   Dans tous les cas, le fichier CardPic.IFF doit être présent !
+   Vous dessinez toutes vos cartes avec la taille que vous voulez. Vous
+   devez réserver au moins une moitié d'écran en hauteur disponible 
+   (Vous dessinez seulement une fois les paires!)
+   Vous n'avez pas besoin de bien centrer les cartes sur l'écran (en X&Y),
+   Marryampic calculera l'espacement entre les cartes avec les infos 
+   données dans le fichier CardInfo.TXT . Toutes les résolutions peuvent
+   être utilisées, excepté les modes HAM-6 et HAM-8.
+   Note: La couleur numéro 0 et la numéro 1 DOIVENT être bien différentes.
+   ( La couleur #1 sert à afficher les messages.) Les couleurs 2&3 sont
+   également utilisées pour l'interface intuition. Les couleurs 17&18&19
+   sont les couleurs du pointeur... Utiliser 'swap & remap' dans vos
+   logiciels de dessins pour l'image !
+   Le dos des cartes doit être dessiné juste après toutes les cartes,
+   à gauche.
+   <!> Vous ne devez pas dépasser 50 cartes sur une ligne horizontale. Pas
+       suffisant? Vous plaisantez...
+       Au démarrage, Marryampic ouvre un écran de hauteur et de largeur
+       similaire à celles contenues dans le dessin ! Nouveau depuis v1.05!
+
+
+=> Tous les différents sons de vos paires : @{b}CardSample-xx.IFF@{ub}
+   où xx est le nombre de chaque paire allant de 1 au nombre de paires 
+   différentes.
+   Dans les versions antérieures, les sons s'appelaient CardSample#xx.IFF
+   mais je me suis apperçu que les archiveurs comme LHA n'apprécient pas du
+   tout de tels noms ! Cependant la compatibilité avec les jeux de cartes
+   '#' est assurée. 
+   Si 2 sons répondant au noms de 'SampleFound.IFF' et 'SampleFinished.IFF'
+   sont présents, ils seront utilisés durant le jeu.
+
+   Depuis Marryampic v1.7, les sons peuvent être compactés avec XPK.
+   Cependant pour envoyer votre jeu de carte sur Aminet, je vous déconseille
+   de les compacter car certains utilisateurs peuvent utiliser une ancienne
+   version. Mais si vous le faîtes, n'oubliez pas de préciser dans le
+   readme qu'il faut utiliser la version 1.7 ou supérieure !!
+
+
+=> un fichier descriptif sur le dessin de vos paires: @{b}CardInfo.TXT@{ub}
+   Il y a les lignes suivantes :
+   WIDTH=      : largeur de vos cartes en nombre de pixels.
+   HEIGHT=     : hauteur de vos cartes.
+   NUMBER_X=   : nombre de cartes sur une ligne horizontale (X).
+   NUMBER_Y=   : nombre de cartes sur une ligne verticale(Y).
+   SPACING_X=  : nombre de pixels entre chaque carte en X.
+   SPACING_Y=  : nombre de pixels entre chaque carte en Y.
+   FONT=..../y : la fonte qui doit être utilisée pour l'écran si présente
+                 (sinon l'écran utilisera la fonte standarde topaz/8).
+                 (Cette ligne est facultative.)
+   MODEID=     : le mode d'écran à ouvrir.
+                 Le nombre doit être donné en hexadécimal, et peut être
+                 défini dans la fenêtre de réglages via le bouton "Mode
+                 d'écran".
+                 (Cette ligne est optionnelle)
+                 Avant d'envoyer votre cardset sur Aminet (par exemple!),
+                 ne mettez pas cette ligne (ou supprimez la si elle
+                 existe), car ceci créera des problèmes aux nombreux
+                 amigaïstes qui n'ont pas la même carte graphique que
+                 vous !!!
+
+
+La meilleure chose à faire pour créer un jeu de cartes, est d'aller
+regarder dans le tiroir d'un de déjà fait, les différents fichiers.
+Le numéro des sons pour les paires est fonction de la position de chaque
+paire sur l'image:
+exemple : position des paires         1   2   3   4   5   6
+                                      7   8   9  10  11  12
+Les sons et l'image doivent être au format IFF (un standart sur notre 
+machine, pas de problème!)
+Vous pouvez éditez le fichier CardInfo.TXT, avec un éditeur ASCII tel
+que MEMACS (fourni avec le WorkBench!)
+Après avoir tout fini, n'oubliez pas de modifier Marryampic.prefs pour
+pouvoir choisir votre nouveau jeu de cartes dans la fenêtre du départ.
+
+Noter bien que les sons de taille supérieures à 128 KO ne peuvent pas être
+préchargés en mémoire. Donner leur le nunéro xx le plus grand (car
+Marryampic s'arrête de précharger les sons en cas de problème), pour
+que les plus petits sons soient résidents en mémoire. Les grands seront
+joués en direct-to-disk. 
+
+Pour vérifier que votre jeu de carte est ok, pendant le chargement des
+fichiers en mémoire, (ou dans la fenêtre des choix pour les possesseurs de
+disque dur) appuyez sur la BARRE ESPACE du clavier, et vous pourrez voir
+chaque paire avec son son associé.
+
+Si vous faites un nouveau jeu de cartes, s'il vous plait, envoyez le moi !
+@endnode
+
+
+
+
+
+@node "Author" "L'auteur"
+Voici mon adresse:
+ 
+Le Douarain Marc 
+28, vallée du Loch 
+56390 Brandivy
+FRANCE 
+
+e-mail : mavati@club-internet.fr
+
+N'oubliez pas de me faire parts de quelques suggestions qu'il soit ou en cas de découverte de bogues, si vous voulez voir une nouvelle version réalisée!
+
+Le Blitz basic2 (v2.1) a été utilisé pour la réalisation de Marryampic.
+@endnode
+
+
+
+
+@node "LegalInfo" "Information légale"
+Je n'accepte aucunes responsabilités en cas de dommages créés à votre système, suite à l'utilisation du logiciel Marryampic ou l'un de ces fichiers associés. Vous utilisez ce programme à vos risques et périls. Bien sûr, si vous rencontrez quelques problèmes, n'hésitez pas à me contacter.
+Marryampic ne fait pas parti du domaine public !
+Il peut être distribué librement tant qu'aucune charge excessive est imposée.
+Il ne peut pas être distribué à l'intérieur d'un pack commercial sans l'autorisation écrite de son auteur.
+
+Marryampic (c) 1995-1999 Le Douarain Marc. 
+Blitz2 (c) Acid software.
+@endnode
+

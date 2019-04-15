@@ -1,0 +1,56 @@
+MARRYAMPIC II
+Copyright (C) 2002-2005 Marc Le Douarain
+http://www.multimania.com/mavati/marryampic2
+December 2002
+
+Version 0.6 (29 december 2005)
+------------------------------
+
+MarryampicII is a card game where you must find pairs.
+There is 2 playing mode available.
+In the "Classic memory rule", you find any pair, and when found, the sound associated
+to that pair is played.
+In the "Only sound pair rule", first a sound is played, then you must find the pair
+that match the sound that's played before (press SPACE to hear back that sound)
+The madness option is when you do not keep the same sound after each try ! Really hard...
+
+One to Four players can play in turn.
+
+A preview of the cards during X seconds is possible.
+
+
+Marryampic I was an Amiga game coded in Blitz Basic.
+Marryampic II requires the SDL library, SDL_image and SDL_mixer. It has been recoded from scratch.
+The cardsets done for Marryampic I can be used with this version.
+
+Warning ! : no CardSet is included in this archive, if you haven't any
+CardSet you must first download one for this game.
+After downloading, put the cardset in the cards directory.
+You can found a CardSet of animals, on www.aminet.net in game/data/MRP_Animals.lha
+and many others on my web page.
+
+
+In a console, type "make" to recompile the game. Tested here with a Linux Mandrake.
+Type "./marryampic2" to start the game.
+To have a fullscreen video mode use "-f" or "--fullscreen" as parameter, or press 'f' key during setup.
+
+
+This game is released under the terms of GNU General Public License.
+
+
+If you want to make your own cardsets, take a look at the file MakingCardsets.txt in the docs
+directory.
+
+
+Note for IFF ILBM 24 bits pictures :
+per default, Marryampic try to load the IFF ILBM 24bits picture if available in the cardset directory.
+If your old SDL_image library version can not show correctly theses pictures (bad colors), comment the line in the Makefile.
+I've joined my current file IMG_lbm.c that support those files if you want to recompile
+your SDL_image version ( in docs/ILBM_24bits/ ).
+
+
+Have fun !
+
+
+
+

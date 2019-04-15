@@ -1,0 +1,342 @@
+@database 680c8fd0-0
+@master HeddleyCreation
+@$VER: 1.0
+@remark Created with Heddley v1.1 (c) Edd Dumbill 1994
+
+@node "Main" "Créer un nouveau CardSet"
+
+@{b} GUIDE POUR FAIRE UN NOUVEAU CARDSET POUR MARRYAMPIC@{ub}
+
+
+@{b}           PROGRAMME PAR MARC LE DOUARAIN@{ub}
+
+@{b}           GUIDE PAR DOMINIQUE LE GOUEFF@{ub}
+
+
+
+ Ce guide doit permettre aux débutants (comme moi) de faire leurs propres
+ jeux de cartes pour Marryampic. Il leur est donc destiné;les autres n'y
+ apprendront rien de nouveau. Comprenez donc son but.
+
+
+ Pour faire un jeu de cartes, le plus dur est de trouver une idée. Ce guide
+ devrait vous aider pour le reste. Il vous expliquera comment utiliser des
+ logiciels comme ADPro et Brilliance. J'utilise personnellement ADPro2 et
+ Brilliance 1.0, logiciels que tout le monde devrait posséder.
+
+
+ Vous devez donc faire des échantillons sonores et des images( presque autant
+ que vous le voulez) puis les  mettre en forme pour enfin éditer un court
+ texte afin de rendre le tout compréhensible par le programme.
+
+
+
+   @{"ECHANTILLONS SONORES" link "Sons" 0}
+
+
+   @{"IMAGES" link "images" 0}
+
+
+   @{"FAIRE L'IMAGE FINALE" link "PageFinale" 0}
+
+
+   @{"FAIRE LE CARSET FINAL" link "CardsetFinal" 0}
+
+
+ Vous remarquerez qu'il n'y a que très peu d'opérations à effectuer. En
+ effet, on peut remercier le programmeur qui a fait un effort pour que tout
+ le monde puisse faire des jeux de cartes très facilement. J'ai fait ce
+ guide d'après les informations qu'il m'a rapidement donné et j'ai beaucoup
+ appris en faisant des cardsets. Cela me prend entre quatre et cinq heures
+ en y incluant le temps de digitalisations des images et des sons qui prend
+ a  lui seul plus des 3/4 du temps. Malheureusement, on ne peux y échapper.
+
+ J'espère que vous apprendrez vous aussi beaucoup en faisant ce "travail",
+ mais ce dont je suis sûr, c'est que vous serez fier d'avoir réellement
+ produit quelque chose en exploitant un peu des possibilités de l'Amiga.
+
+ Bon courage...
+@endnode
+
+@node "images" "images"
+
+
+ Avant de faire vos images, vous devez penser à la @{"résolution" link "Resolutions" 0} à employer.
+ Lorsque vous avez fait ce choix, pensez qu'il faut réserver environ dix
+ pixels verticaux pour la barre de titre et les messages. La moitié de ce
+ qui reste peut être alloué à vos images ainsi que la totalité de la
+ résolution horizontale car le jeu dédoublera lui-même les images dans un
+ ordre aléatoire. Ainsi, si vous avez choisi un mode haute résolution
+ entrelacée (640 x 512), il vous restera (512-10)/2 soit environ 250 pixels
+ verticaux et 640 horizontaux. Il est préférable d'arrondir par défaut à la
+ dizaine près pour faciliter les manipulations suivantes et laisser plus de
+ place aux messages durant le jeu au cas où la police employée prendrait de
+ la place.
+
+ Vous pouvez faire le nombre d'images que vous voulez dans cet espace et ce
+ sur autant de lignes que vous voulez mais en respectant quelques règles
+ simples: Le nombre d'images doit être identique sur chaque ligne et est
+ "limité" à 50. De plus, pensez aux utilisateurs: trop de cartes rend le jeu
+ difficile et les images difficilement identifiables. De nombreuses images
+ impliquent autant d'échantillons sonores qui prennent de la @{"place" link "Place" 0}.
+ N'oubliez pas de calculer un espace horizontal (constant) et un espace
+ vertical (autre constante) entre les cartes.
+
+ 
+ 
+ A ce stade, vous devez être capable de faire un plan de votre page comportant
+ la taille des images, des espaces et la résolution du tout.
+
+ Par exemple, si vous prévoyez que vos images feront 50 x 100, que vous en
+ aurez 14 sur deux lignes (donc quatre lignes durant le jeu), avec une
+ résoution de 640 x 512 (soit 250 x 640 exploitable), vos espaces ( au nombre
+ de 6 en horizontal et 1 en vertical) feront:
+                   [640-(7*50)]/6   soit environ 48 en horizontal
+                et [250-(2*100)-10] soit 50 en horizontal.
+
+
+ Lorsque tout cela est (enfin) déterminé, vous pouvez réaliser vos images en
+ essayant de garder les détails à conserver aussi grand que possible afin de
+ garantir une bonne qualité lors de la @{"mise en forme des images" link "MiseEnForme" 0}.
+@endnode
+
+@node "CardsetFinal" "Cardset final"
+
+
+ Vos deux images et vos sons devront se trouver dans un tiroir qu'il faudra
+ lui-même placer dans le tiroir "cards" de Marryampic. Il faut en plus un
+ petit fichier texte créé à partir d'un éditeur de texte comme CygnusEd ou
+ Memacs (fourni avec le Workbench). Il DOIT comporter les lignes suivantes:
+
+            WIDTH=..    : Largeur de chaque carte 
+           HEIGHT=..    : Hauteur de chaque carte
+         NUMBER_X=..    : Nombre de cartes en horizontal
+         NUMBER_Y=..    :    "    "  "      " vertical
+        SPACING_X=..    : Valeur d'un espacement horizontal
+        SPACING_Y=..    :   "     "      "       vertical
+
+ Une autre ligne peut être ajoutée mais est facultative:
+ 
+             FONT=.../y : Police de caractère que vous préfèreriez
+                          Par exemple: topaz/8
+
+ Vos sons doivent s'appeler "CardSample-xx.IFF" où xx désigne le numéro de la
+ carte à lui associer. Je rappelle que Marryampic compte comme ceci:
+                         1 2 3 4  5  6 
+                         7 8 9 10 11 12...
+
+ Vous pouvez ajouter deux autres sons qui seront joués lorsqu'un joueur aura
+ trouvé une paire et lorsque toutes les paires auront été trouvées. Ils
+ devront s'appeler repectivement "SampleFound.IFF" et "SampleFinished.IFF"
+
+ J'insiste sur le fait que TOUT CECI DOIT SE TROUVER DANS UN TIROIR lui-même
+ placé dans le tiroir "cards" de Marryampic.
+
+ Voilà, votre jeu de carte est terminé. Cela vous a peut être semblé long
+ mais vous prendrez de la vitesse et de l'assurance avec l'expérience.
+ Il ne vous reste plus qu'à le tester en appuyant sur la barre d'espace au
+ lieu de lancer le jeu dans la fenêtre de Marryampic. Pensez à tester vos
+ deux jeux de cartes, l'ECS etl'AGA et n'oubliez surtout pas d'envoyer vos
+ réalisations à Marc Le Douarain, l'auteur de ce superbe jeu qu'est Marryampic.
+@endnode
+
+@node "MiseEnForme" "Mise en forme des images"
+
+
+ J'expliquerai cette mise en forme en prenant comme base le logiciel ADPro car
+ c'est le seul que je sache exploiter.
+
+ Une fois ce logiciel lancé, vérifiez que le bouton à gauche de "load" est en
+ position "replc" et non "comp". Chargez une de vos images. Dans le menu
+ "Image Operators", sélectionnez le premier (le petit) et choisissez
+ "crop visual" puis "accept and operate". Votre image apparait en noir et
+ blanc ainsi qu'une zone délimitée par un trait blanc. Choisisez la zone à
+ conserver en cliquant sur les carrés au milieu des traits et en les tirant à 
+ la souris. Essayez de garder à peu près le même aspect que l'image à inserer
+ dans le jeu de cartes afin de ne pas la déformer grace aux informations
+ données par "image aspect". Dans notre exemple, chaque image faisant 50x100,
+ l'aspect devra approcher 1:2 (ou 49:100, 24:50 ...).
+ Quand le résultat est satisfaisant, cliquez sur "accept.
+ Dans le menu "screen controls" faîtes "execute" afin de vérfier le travail.
+ S'il n'est pas concluant, recommencez l'opération "crop visual" en cliquant
+ directement le bouton "execute op".
+
+ Une fois ce travail effectué, ilreste à mettre l'image à la taille desirée.
+ Pour cela, dans "image operators" choisissez "scale". Une fenêtre apparait
+ donnant la taille de l'image source et celle du résultat. Tapez les valeurs
+ que vous désirez donner à vos images en sachant que le 1er nombre indique la
+ largeur et le second la hauteur. Cliquez sur "accept" et refaites "execute"
+ dans "image controls". Si les couleurs ne vous conviennent pas, dans "colors
+ controls", le bouton "balancing" vous permet de modifier le contraste et la
+ luminosité entre autre. Une fois l'image à votre goût, sauvegardez la.
+ 
+
+ Répétez ces opérations pour chacune de vos images avant de passer à la mise
+ en forme de la @{"page finale" link "PageFinale" 0}.
+@endnode
+
+@node "PageFinale" "Page finale"
+
+
+ La page finale est l'image que vous pouvez visualiser dans chaque tiroir de
+ jeu de cartes. Il en existe en fait deux: une pour les machines ECS et une
+ autre pour les machines AGA portant respectivement les noms de CardPic.IFF
+ et CardPic_AGA.IFF.
+
+ Votre page sera faite de la même façon. Marryampic reconnait les cartes en
+ les comptant comme ceci:  1 2 3 4 5 ....
+                           6 7 8 9 10 ...
+
+ Pensez à reservez les plus gros échantillons sonores pour les dernières
+ cartes pour une raison de place.
+
+ Vous devez tout d'abord éditer une page vierge au format de la page finale à
+ obtenir (noire), servant de fond et de support à votre jeu de cartes, à
+ partir d'un logiciel de dessin comme DPaint ou Brilliance.
+
+ Pour faire votre page vierge avec Brilliance selectionnez "screen settings"
+ puis "select RGB Mode". Choisissez la résolution désirée puis cliquez sur
+ "use". Il ne vous reste qu'à la sauvegarder en cliquant sur "buffer" puis 
+ "save picture". Avec DPaint, c'est encore plus simple puisqu'il vous demande
+ à son lancement quelle résolution vous désirez.
+
+ Lancez ADPro. Placez le bouton à gauche de "load" sur "comp" et non plus sur
+ "replc" ainsi que dans "color controls" le bouton sur "dither: floyd (1)".
+ Chargez la page vierge que vous venez de faire ou l'image de fond que vous
+ avez choisi. Chargez ensuite la première image de votre jeu de cartes. Une
+ Fenêtre s'ouvre. En cliquant en bas sur "render", vous aurez un aperçu de
+ votre fond. En haut à droite de celui-ci apparait un rectangle modélisant
+ votre 1ère carte. Placez la où bon vous semble en pensant à la taille des
+ cartes et aux espaces. Recommencez l'opération avec les cartes suivantes
+ jusqu'à ce que votre image soit complète sans oublier le dos des cartes que
+ vous placerez seule sur une autre ligne et sur la première collonne.
+ Sauvegardez la en IFF 24bits (en cas d'erreur de manipulation par la suite)
+ de préférence en cliquant sur le bouton à droite de "save" et en choisissant
+ ce mode de sauvegarde.
+ 
+ Convertissez ensuite l'image en 256 couleurs grâce au bouton à droite de
+ "colors" dans "screen controls" puis cliquez sur "accept and execute".
+ Sauvegardez cette image en IFF 256 couleurs sous le nom de CardPic_AGA.IFF.
+ Puis en 16 couleurs. Si l'image ne vous convient pas (et c'est généralement
+ le cas) il faut la convertir en noir et blanc. Pour cela, sélectionner
+ "Color_to_gray" dans "image operators" puis "accept and execute". Sauvegardez
+ cette image en IFF 16 couleurs sous le nom de CardPic.IFF. Cette dernière 
+ image est destinée aux machines ECS. Même si vous ne voulez pas leur destiner
+ votre jeu de cartes, ce fichier est obigatoire au lancement de Marryampic.
+
+ Cette image n'est pas totalement finie car la palette de couleurs utilisée
+ rend illisible les messages sur la barre de titre. Ces couleurs (1&2,3&4
+ 17&18&19) doivent être bien distinctes. Pour cela, lancez votre logiciel de
+ dessin et chargez l'image que vous venez de sauvegarder. Avec Brilliance,
+ dans palette, sélectionnez la couleur 1 par exemple, cliquez sur "swap"
+ et cliquez sur une couleur bien différente de la numéro 2. L'image change
+ et c'est normal; nous nous en occuperons tout à l'heure. Recommencez
+ l'opération avec les couleurs pré-citées. Remarques: les logiciels de dessin
+ comptent les couleurs de la même façon que Marryampic compte les cartes.
+ Pour rendre à l'image ses couleurs d'origine, cliquez sur "remap". Vous
+ pouvez à présent la sauvegarder sous le même nom. N'oubliez pas de refaire
+ cette opération avec l'image en 16 tons de gris. Les couleurs 17,18 et 19
+ n'étant bien sûr pas présentes.
+
+ Il ne reste plus qu'à faire le @{"cardset final" link "CardsetFinal" 0}.
+@endnode
+
+@node "Qualité" "Qualité"
+
+
+ Pour une meilleure qualité sonore, le volume du signal d'entrée doit être
+ fort sans pour autant saturer; l'idéal étant de rester juste à la limite.
+ Il est plus facile de controler cela si le signal provient d'une chaîne
+ stéréo ou de tout équipement possédant un potentiomètre de volume.
+ Privilégiez les modifications du signal à partir de la source plutôt que
+ de manière logicielle (filtre, tonalité, volume...) quitte à le retoucher
+ par la suite.
+
+
+ Bien que l'on accuse en général la fréquence d'échantillonage lorsqu'un
+ échantillon est de mauvaise qualité, cela est souvent du a un mauvais
+ filtrage. En effet, un filtrage est indispensable. Essayez celui du logiciel
+ que vous utilisez. Marryampic possède lui aussi un filtre passe-bas activable
+ par la touche F durant le jeu ou dans le menu Icones-Informatins du Workbench
+ lorsque son icone est activée. Filter=Yes/no.
+
+ Toutes ces recommandations peuvent vous sembler inutiles si vous utilisez
+ votre écran ou votre télé pour les sons, mais il est si simple de relier
+ son Amiga à une chaîne Hi-Fi, si l'on en possède une, que de plus en plus 
+ d'utilisateurs le font. Il serait donc sympatique de leur faire profiter de
+ leur matériel.
+@endnode
+
+@node "Place" "Place"
+
+
+
+ Les échantillons sonores occupent au moins les trois quarts du fichier final
+ donc, bien que soit très variable, essayez de les réduire.
+ Si vous voulez que votre cardset final soit distribué dans le domaine
+ public, le mieux serait qu'il "rentre" dans une disquette soit 880Ko sans
+ aucune compression ni archivage pour le rendre directement utilisable.
+   
+ Pour cela, n'utilisez pas une fréquence d'échantillonnage trop importante.
+ 13KHz suffisent pour les voix et 25KHz pour la musique. Evitez aussi les
+ digitalisations inutilement longues. Faîtes un rapide calcul: 20 secondes
+ à 13KHz prendront 260Ko... ne laissant plus beaucoup de place pour les autres
+ digitalisations et les images. 7 à 10 secondes sont plus raisonnables pour
+ dix paires de cartes par exemples.
+
+ Evitez de faire des échanillons de plus de 128Ko car ceux-ci ne peuvent pas
+ être pré-chargé en mémoire au lancement du jeu. On ne peut donc pas le couper
+ en court (c'est agaçant à la longue). Réservez vos plus gros échantillons
+ pour les dernières cartes lors de l'execution de l'image finale et du cardset
+ final car Marryampic les charge dans l'ordre croissent. De cette manière,
+ même les machines possédant très peu de mèmoire auront tout de même un grand
+ nombre d'échantillons déjà chargés en mémoire et cela améliorera la
+ jouabilité. Il faut penser que tout le monde n'a pas de disque dur ou
+ d'extension mémoire
+@endnode
+
+@node "Resolutions" "Resolutions"
+
+
+ Les résolutions sont déterminées par le nombre de pixels qu'elles emploient.
+ Cela donne deux nombres séparés par un "x". Ainsi "X x Y" indique le nombre
+ de pixels horizontaux X et verticaux Y.
+
+ Sur Amiga, il existe: - la basse résolution 320 pixels
+                       - la haute résolution 640 pixels
+                       - la super haute résolutions  1280 pixels
+                pour  l'horizontal
+              
+              et       - l'entrelacé  512 pixels
+                       - le non entrelacé 256 pixels
+                pour la verticale.
+
+ Soit par exemple haute résoluton entrelacé 640 x 512.
+ 
+ Vous trouverez ces valeurs dans votre volume système ou votre disquette
+ Workbench dans le tiroir préféreces en activant l'icone screenmode (mode
+ d'affichage).
+
+ Attention, les résolutions utilisant un mode vertical entrelacé scintillent
+ sur un écran classique du genre télé ou 1083 mais il est parfaitement 
+ supportable si les couleurs de l'ensemble sont plutôt sombres. D'ailleurs,
+ tous les cardsets réalisés à ce jour (et à ma connaissance) utilisent le
+ mode haute résolution entrelacé (640 x 512) ayant une précision à peu près
+ égale en hauteur et en largeur.
+@endnode
+
+@node "Sons" "Sons"
+
+
+ Il vous faut faire un échantillon sonore pour une paire de cartes en
+ utilisant n'importe quelle carte de digitalisation et son logiciel associé
+ ou tout simplement en reprenant les samples disponibles dans le domaine
+ public. J'utilise une vieille carte "Techno soud turbo" et AudioMasterIV
+ ce qui est largement suffisant pour le travail à effectuer. Vous devez
+ sauvegarder vos échantillons au format IFF (évidemmant diront les moins
+ novices) avec, dans un premier temps, le nom que vous voulez.
+
+ Les seules remarques que j'aurai à faire à ce sujet concernent la @{"place" link "Place" 0}
+ des échantillons dans un cardset et la @{"qualité" link "Qualité" 0} de ces échantillons.
+@endnode
+

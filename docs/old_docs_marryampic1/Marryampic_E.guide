@@ -1,0 +1,254 @@
+@database Marryampic
+@$VER: 1.7
+@author "Le Douarain Marc"
+@wordwrap
+@font XEN.font 11
+
+@node "Main" "Marryampic documentation"
+@font helvetica.font 13
+               @{b}Marryampic v1.7
+               3 October 1999
+               (c) 1995-1999 Le Douarain Marc@{ub}
+
+        @{"Introduction" link "Introduction" 0}			What is "Marryampic"?
+        @{"Requirements" link "Requirements" 0}			On which machine will this works?
+        @{"Installation" link "Install" 0}				Installation & new CardSets.
+        @{"SetUp window" link "SetUp Window" 0}			Setting the preferences for the game.
+        @{"Playing" link "The game" 0}				The rules of the game.
+        @{"Own CardSets" link "Own CardSets" 0}			If you want to make your own CardSets.
+        @{"Author" link "Author" 0}				It's me.
+        @{"Legal information" link "LegalInfo" 0}		Usual note.
+
+
+                  Marryampic Home Page :
+    http://www.club-internet.fr/perso/mavati/marryampic
+@endnode
+
+@node "Introduction" "Introduction to Marryampic"
+Marryampic is a card game where you must find the pairs that match the sound that's played. There are many rules for the game, depending of the options you've checked in the SetUp window. The main idea is, first, a sample of 1 pair is played and each player tries to find the 2 (two) cards in turn. But you can also play like a normal "memory" game.
+@endnode
+
+@node "Requirements" "Requirements"
+To use Marryampic, you must have:
+   - an Amiga (for sure) (very uncommon!)
+   - Kickstart 2.0 or higher
+   - 1 Mb of RAM should be enough (for ECS/OCS)
+   - a harddrive should be very appreciable.
+     (moreover some cardsets are too enormous to stand on one floppy disk
+      880Kb...or exactally 885500 bytes)
+
+Marryampic has been sucessfully tested on 
+   - an Amiga 1200 / HardDrive / Blizzard 68020-28mhz / 6 Mb
+   - an Amiga 1200 / HardDrive / Blizzard 68030-50mhz / 10 Mb
+   - an Amiga 1200 / HardDrive / Mtec 68030-25mhz / 10 Mb
+   - an Amiga 3000 / HardDrive / CyberstormMK2 68060-50mhz / Cybervision64
+   - an Amiga 2000 / HardDrive / 68040-28mhz / Picasso2
+
+If you discover some bugs, please report me them.
+@endnode
+
+@node "Install" "Installation"
+To install Marryampic, you just have to drag the drawer "Marryampic" where you want on your hard drive.
+
+Since version 1.5, Marryampic isn't delivered with any cardsets, so you're not obliged to download a big archive even though you already have that cardset.
+
+If you DON'T HAVE ANY CARDSETS, you MUST first DOWNLOAD ONE (at least) before playing this game!!! There are many cardsets available on Aminet in game/data.
+
+To install a new cardset, you just have to drag its drawer into the Cards drawer of Marryampic.
+
+
+
+A little note for floppy disk users: (if there are still any around...?) The ASCII file Marryampic.prefs contains the paths for all the differents cardset which are available in your CARDS drawer. You must write on a new line after the line PATHS_CARDS= all the different paths. This file is usefull for floppy disks users: you can put a line like:
+    DISK_CARTOONS:Warner so Marryampic could access a cardset on disk named 'DISK_CARTOONS:' The name of the drawer is used in the cardset gadget: see § *THE START.
+
+
+If you have a hard drive, and want the automatic scanning of the Cards drawer, delete the file "Marryampic.prefs" if there is one present. This file is obsolete for you. Let the Amiga find the cardsets herself! ("herself" because in Spanish "AMIGA" means "Female friend".)
+@endnode
+
+@node "SetUp Window" "SetUp Window"
+In the nice window which appears, you may set the following:
+
+# The number of players (1 to 4).
+
+# The name of each player.
+
+# The cardset to play with.
+
+# Only sound pairs valid or not. This allows you to set the type of game
+  "Classic Memory" or "Marryampic". In the classic game, you can find any
+  pair. In the Marryampic mode, you first listen to a sound, then you have
+  to find the pair in accordance. And only that one!
+
+# For the Marryampic mode, the systematic change of sound or not. If on, this
+  is really very difficult!
+
+# A preview of the pairs with a defined time.
+
+# The graphic version to use: ECS or AGA/CyberGraphX/Picasso96 (if
+  installed).
+
+# The screen mode to open the screen of the selected CardSet.  Some cardsets
+  may not include an AGA version of the graphics. Graphic board owners can use
+  the AGA graphics by choosing a graphic board mode supporting enough number of
+  colors.
+
+Click OK! to start playing.
+
+
+
+Marryampic supports differents options available with the menu "Prefs":
+
+ # Preload
+   Indicates to Marryampic to preload or not as much as possible, the samples
+   in memory. Usefull for floppy users to avoid waiting for disk access...
+
+ # DirectToDisk
+   Indicates samples are not preloaded, how to be played:
+
+   In direct to disk: a sample is loaded and played at the same time
+   (little memory consumption but locked...) or else a sample is fully
+   loaded then played (memory needed is of the length of the sample)
+
+   If you have a hard drive, you should not check-mark this option.
+   Note: a sample with the length > 128 Kb is obligatory played in
+   DirectToDisk.
+
+ # FlashScreen
+   Indicates to flash and beep the screen if you don't click on a card.
+   (depending of the preferences of your WorkBench, Prefs/Sound)
+
+ # Filter
+   Selects whether the low-pass filter will be activate or not.
+
+ # EraseFoundPairs
+   Will clear the pairs when found.
+
+ # Save
+   Will save all your options and the actual setup.
+@endnode
+
+@node "The game" "The rules of the game"
+- Marryampic mode: Option "Only sound-pair valid" CHECKED
+
+ First an audio sample is played, and you must find the 2 (two) cards of the
+ pair corresponding to this sound.
+
+- In classic mode: Option "Only sound-pair valid" NOT CHECKED
+
+ You can find any pairs. When found, the sound corresponding to this pair
+ will be played.
+
+Each player turn 2 (two) cards on their turn. If this is the pair, the 2 (two) cards are taken out, or else the 2 (two) cards are hidden again. The number of all the pairs found by each player is displayed at the end. The player who found the pair plays again.
+
+Push the SPACE BAR to hear the sample (in Marryampic mode) again.
+
+Push the key "f" key to swap the audio filter. What else could I add...?
+@endnode
+
+@node "Own cardsets" "Making your own CardSets !"
+First, your cardset MUST be in a drawer.
+
+
+In this drawer you will find:
+
+
+=> a picture containing all your different pairs+the backdrop:
+    @{b}CardPic.IFF@{ub}      for an ECS display mode compatible with all
+                     amiga (obligatory).
+    @{b}CardPic_AGA.IFF@{ub}  for an AGA (or CGX/P96) display mode. (optional)
+
+   If you do not want ECS compatibility then CardPic.IFF should be AGA.
+   You draw all your cards in the size you want. You must reserve at least
+   a middle height of your screen free (You only draw the pairs 1 (one)
+   time!)
+
+   You don't have to centre your cards on the screen (in X&Y), Marryampic
+   will calculate the spacing for your cards with the info given in the
+   file CardInfo.TXT.  All the resolutions could be used, and as many
+   colors as you want... (except HAM-6 and HAM-8 mode.)
+
+   Note: The color number 0 and the number 1 MUST be different.
+         ( Colour #1 is used to display messages. ) Also note that colors
+         2 & 3 are used for the intuition interface, colors 17, 18, & 19 are
+         used for the pointer... so don't hesitate to swap & remap the
+         picture.
+
+   The backdrop card must be placed after all the cards on the left.
+
+   <!> You must not have more than 50 cards on a horizontal line. Not
+       enough? uuhh!, write me...
+       At the start-up Marryampic will open a screen of the width and the
+       height contained in the file!  New since v1.05!
+
+
+=> all the differents digitized samples of your pairs: @{b}CardSample-xx.IFF@{ub} 
+   where xx is the number of the pair from 1 to number of different pairs.
+   In older version of Marryampic, the files were CardSample#xx.IFF but the
+   LHA archiver doesn't appreciate those names... (but you can still use
+   these names!) The 2 samples "SampleFound.IFF" and "SampleFinished.IFF"
+   will be used during the game if they are present.
+
+   Since Marryampic v1.7, the samples can be packed with XPK.
+   But for an upload on Aminet, it should be preferably no to pack them, just because
+   people can have an old version of Marryampic... or if you make it, at least do
+   not forget to tell them to use version 1.7 or greater ! 
+
+
+=> a descriptive file on how are drawned your cards: @{b}CardInfo.TXT@{ub}
+   there are lines for:
+   WIDTH=      : width of your cards in number of pixels.
+   HEIGHT=     : height of your cards.
+   NUMBER_X=   : number of cards on a horizontal line.
+   NUMBER_Y=   : number of cards on a vertical line.
+   SPACING_X=  : number of pixels between each card on a horizontal line.
+   SPACING_Y=  : number of pixels between each card on a vertical line.
+   FONT=..../y : the font the screen should use if present (otherwise
+                 it will use the standart topaz/8). (Optional line)
+   MODEID=     : the screen mode to open.
+                 Number must be in hexadecimal, and can be defined in the
+                 setup window with the "ScreenMode" button. (Optional line)
+                 For an upload on Aminet (for example!), please DO NOT PUT
+                 THIS LINE, as it can cause trouble to many people not
+                 having the same graphic card (and the same MODEID) than
+                 you !!! If that line already exists, delete it !!!
+
+
+A better way to make a cardset is to look in the drawer of an already made CardSet, all the different files. 
+The number of the samples for the cards are in this format : example: position of the pairs
+             1   2   3  4  5
+             6   7   8  9  10
+             11  
+The samples and the picture must be in IFF (a standard on our machine, not a problem!) 
+You can edit the file CardInfo.TXT, with any ASCII editor (ex: MEMACS). 
+After you've done it don't forget to change the Marryampic.prefs to be able to select your new cardset in the cardset gadget in the start window (only if you start from floppy disk).
+
+Note that the samples with length greater than 128Kb can't be preload in memory. Give them the bigger number xx as possible (because Marryampic stops preloading samples when an problem occurs), to have all the little samples resident in memory. 
+The bigger ones will be played in direct-to-disk (but with hard-disks it's not a problem)
+
+To verify that your new cardset is ok; during the loading of the files in memory, (or in the setup window for harddrive owners...) press the SPACE BAR & you will be able to see each pair of cards and hear the associated sample for it.
+
+If you make a new cardset, please send it to me.
+@endnode
+
+@node "Author" "Author"
+Here is my address: 
+
+Le Douarain Marc  
+28, vallée du Loch  
+56390 Brandivy 
+FRANCE
+
+e-mail: mavati@club-internet.fr
+
+Do not forget to give me feedback or report bugs if you want another version to be done!  I would also like to know if you like my game or not.  If not then please tell my why.
+
+I've used Blitz2 (v2.1) to create Marryampic, which allows you to make this sort of soft, certainly fasler than in C.
+@endnode
+
+@node "LegalInfo" "Legal information"
+I won't accept any responsibilities for any damage done to your system nor data lost, directly or indirectly, as a result from using Marryampic or any of its associated files. You use the program entirely at your own risk. Of course if you *do* experience problems then I'll do what I can to sort them out by e-mail. Please let me know of any bugs so that I can try to cure them in a future version of Marryampic. Marryampic and its associated files are not public domain. They may be distributed freely as long as there is not an unreasonable charge imposed. It may not be included within any commercial package without express written permission from the author; the exceptions from this are the AmiNet CDs and other PD collections. Marryampic and its associated utilities may only be distributed if all files contained within the original archive are present.
+
+Marryampic (c) 1995-1999 Le Douarain Marc.  
+Blitz2 (c) Acid software.
+@endnode
+

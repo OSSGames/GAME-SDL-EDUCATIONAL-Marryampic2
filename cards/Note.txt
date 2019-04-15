@@ -1,0 +1,5 @@
+Just put your cardsets directories here...
+They will be automatically detected by Marryampic.
+
+
+Memo: to create a tar.gz of a directory cardset, use tar czvf MRP2_BaladeDalton.tar.gz LaBalladeDesDalton/

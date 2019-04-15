@@ -1,0 +1,134 @@
+MARRYAMPIC II
+-------------
+Making your own CardSets !
+
+
+First, your cardset MUST be in a directory.
+This drawer as all the cardsets must be in the directory "cards".
+
+
+In your cardset directory you will find the following files :
+
+
+   ------------------------------------------------------------
+=> a PICTURE containing all your different pairs+the backdrop :
+   ------------------------------------------------------------
+    CardPic.IFF        for an ECS display mode compatible with all Amiga.
+    CardPic_AGA.IFF    for an AGA Amiga (or CGX/P96) display mode.
+    CardPic_24bits.iff (used by Marryampic2)
+ or/and
+    CardPic.jpg        (used by Marryampic2)
+ or/and
+    CardPic.png        (used by Marryampic2)
+
+   A little explain to understand the mean of each picture file :
+   * For Marryampic 1 :
+     ==================
+   The CardPic.IFF must be an ILBM picture file that all Amiga can use. It must
+   always be present (ex: 640x512, 16 colors).
+   The CardPic_AGA.IFF is an ILBM picture file that AGA Amigas and owners of
+   graphics cards can display (ex: 640x512, 256 colors).
+   Files CardPic_24bits.iff & CardPic.jpg are not used with these version.
+   * For Marryampic 2 :
+     ==================
+   This version try to load one picture file in the following order :
+   PNG > JPEG > 24 bits IFF > AGA IFF > IFF.
+   With only a CardPic.png file, it is enough and will work !
+   * For Marryampic 1 & 2 :
+     ======================
+   To make a cardset compatible with the 2 versions, the files CardPic.IFF
+   and CardPic_AGA.IFF must be included !!!
+   And join preferably a CardPic.png or CardPic.jpg file for better quality
+   graphics if required.
+
+   You draw all your cards in a picture with a size of 640x480 pixels. You must
+   reserve at least a middle height of your screen free (You only draw the pairs 1 (one)
+   time!)
+
+   You don't have to centre your cards on the screen (in X&Y), Marryampic
+   will calculate the spacing for your cards with the info given in the
+   file CardInfo.TXT.  All the resolutions could be used, and as many
+   colors as you want... (except IFF HAM-6 and HAM-8 mode.)
+
+   The backdrop card must be placed after all the cards on the left.
+
+   <!> You must not have more than 50 cards on a horizontal line. Not
+       enough? uuhh!? ;-)
+
+   Note: For IFF picture, the color number 0 and the number 1 MUST be different.
+         ( Colour #1 is used to display messages. ) Also note that colors
+         2 & 3 are used for the intuition interface, colors 17, 18, & 19 are
+         used for the pointer... so don't hesitate to swap & remap the
+         picture.
+
+
+   ----------------------------------------------------
+=> all the differents digitized SAMPLES of your pairs :
+   ----------------------------------------------------
+    CardSample-xx.IFF
+  or
+    CardSample-xx.wav
+
+   where xx is the number of the pair from 1 to number of different pairs.
+
+   The 2 samples "SampleFound.IFF" and "SampleFinished.IFF"
+   (or "SampleFound.wav" and "SampleFinished.wav")
+   will be used during the game if they are present.
+
+   Do not pack the IFF samples with XPK if you want to spread cardsets !
+   (not supported with Marryampic2 and probably never)
+
+   A little explain to understand the mean of each sound file :
+   * For Marryampic 1 :
+     ==================
+     These version can only play IFF 8SVX samples.
+   * For Marryampic 2 :
+     ==================
+     These version can play IFF 8SVX and WAV samples.
+
+
+   --------------------------------------------------------------
+=> a descriptive file on how are drawned your cards: CardInfo.TXT
+   --------------------------------------------------------------
+   there are lines for:
+   WIDTH=      : width of your cards in number of pixels.
+   HEIGHT=     : height of your cards in number of pixels.
+   NUMBER_X=   : number of cards on a horizontal line.
+   NUMBER_Y=   : number of cards on a vertical line.
+   SPACING_X=  : number of pixels between each card on a horizontal line.
+   SPACING_Y=  : number of pixels between each card on a vertical line.
+
+   The following lines are only used by Marryampic1.
+   FONT=..../y : the font the screen should use if present (otherwise
+                 it will use the standart topaz/8). (Optional line)
+   MODEID=     : the screen mode to open.
+                 Number must be in hexadecimal, and can be defined in the
+                 setup window with the "ScreenMode" button. (Optional line)
+                 For an upload on Aminet (for example!), please DO NOT PUT
+                 THIS LINE, as it can cause trouble to many people not
+                 having the same graphic card (and the same MODEID) than
+                 you !!! If that line already exists, delete it !!!
+
+You can edit the file CardInfo.TXT, with any ASCII editor.
+
+
+The better way before to make a cardset is to look in the drawer of an already made CardSet, all the
+differents files.
+The number of the samples for the cards are coded like this :
+example: position of the pairs for a game with 10 pairs.
+             1     2     3    4    5
+             6     7     8    9    10
+             Backdrop
+
+
+
+-End-
+
+To verify that your new cardset is ok, press the SPACE BAR in the Setup & you will be able to see each
+pair of cards and hear the associated sample for it.
+
+If you make a new cardset, please send it to me.
+
+
+MaVaTi, 1st january 2003.
+

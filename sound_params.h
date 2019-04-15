@@ -1,0 +1,21 @@
+
+#ifdef __MORPHOS__
+#define AUDIO_FREQ 22050
+#define AUDIO_FORMAT AUDIO_S8
+#define AUDIO_CHANNELS 1
+#define AUDIO_SIZE 2048
+#else
+#ifdef __WIN32__
+#define AUDIO_FREQ 22050
+#define AUDIO_FORMAT AUDIO_S16
+#define AUDIO_CHANNELS 1
+#define AUDIO_SIZE 2048
+#else
+#define AUDIO_FREQ 44100
+#define AUDIO_FORMAT AUDIO_S16
+#define AUDIO_CHANNELS 2
+#define AUDIO_SIZE 512
+#endif
+#endif
+
+
